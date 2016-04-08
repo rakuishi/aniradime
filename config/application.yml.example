@@ -1,0 +1,2 @@
+SECRET_KEY_BASE: 'aniradi.me'
+ANIRADIME_DATABASE_PASSWORD: 'aniradi.me'

@@ -15,9 +15,10 @@ class OnsenWorker
       image_url = base_url + node.xpath('p[@class="thumbnail listItem"]//img').attribute('src').text
       description = ActionView::Base.full_sanitizer.sanitize(node.xpath('p[@class="navigator listItem"]').inner_text)
 
+      # `data-update` が空白、noMovie を含む番組は排除する
       published_at = node.attribute('data-update').text
-      # 新番組は、`data-update` に値が存在しない
-      next unless published_at.present?
+      next if published_at.blank?
+      next if node.attribute('class').text.include?('noMovie')
 
       Radio.create_or_update_with(
         name,

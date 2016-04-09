@@ -5,7 +5,7 @@ class ChnicovideoWorker
   include ActionView::Helpers::SanitizeHelper
 
   def self.task
-    RadioStation.where(parse_url_type: 'chnicovideo').each do |radio_station|
+    RadioStation.find_parse_url_type('chnicovideo').each do |radio_station|
       xml = get_response_body(radio_station.parse_url)
       return unless xml.present?
 

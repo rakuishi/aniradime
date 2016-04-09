@@ -15,7 +15,6 @@ class OnsenWorker
       image_url = base_url + node.xpath('p[@class="thumbnail listItem"]//img').attribute('src').text
       description = ActionView::Base.full_sanitizer.sanitize(node.xpath('p[@class="navigator listItem"]').inner_text)
 
-      # TODO: TimeZone +09:00 を考慮する
       published_at = node.attribute('data-update').text
       # 新番組は、`data-update` に値が存在しない
       next unless published_at.present?

@@ -3,7 +3,9 @@ class Radio < ActiveRecord::Base
 
   # TODO: 画像はサーバーに保存して使用する
   def self.create_or_update_with(name, description, url, image_url, published_at, radio_station)
-    radio = Radio.find_or_initialize_by(name: name, published_at: published_at.to_datetime)
+    published_at = Time.parse(published_at).to_datetime
+
+    radio = Radio.find_or_initialize_by(name: name, published_at: published_at)
     radio.name = name
     radio.description = description
     radio.url = url

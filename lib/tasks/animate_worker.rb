@@ -12,8 +12,6 @@ class AnimateWorker
       url = URI.parse(radio_station.parse_url)
       base_url = url.scheme + '://' + url.host
       text_node = node.xpath('div[@class="textBox"]')
-
-      # TODO: TimeZone +09:00 を考慮する
       published_at = text_node.xpath('span[@class="date"]').inner_text
 
       Radio.create_or_update_with(

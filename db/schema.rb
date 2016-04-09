@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20160409011040) do
 
   create_table "radio_stations", force: :cascade do |t|
-    t.string   "name",           limit: 255, null: false
-    t.string   "url",            limit: 255, null: false
-    t.string   "parse_url",      limit: 255, null: false
-    t.integer  "parse_url_type", limit: 4,   null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",           limit: 255, default: "", null: false
+    t.string   "url",            limit: 255, default: "", null: false
+    t.string   "parse_url",      limit: 255, default: "", null: false
+    t.integer  "parse_url_type", limit: 4,   default: 0,  null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "radios", force: :cascade do |t|
@@ -32,5 +32,7 @@ ActiveRecord::Schema.define(version: 20160409011040) do
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
+
+  add_index "radios", ["name", "published_at"], name: "index_radios_on_name_and_published_at", unique: true, using: :btree
 
 end

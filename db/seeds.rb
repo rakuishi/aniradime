@@ -28,6 +28,13 @@ def setupRadioStations
       url: 'http://www.onsen.ag/',
       parse_url: 'http://www.onsen.ag/',
       parse_url_type: 'onsen',
+    },
+    {
+      id: 4,
+      name: 'アニメイトTV ウェブラジオ',
+      url: 'http://www.animate.tv/radio/',
+      parse_url: 'http://www.animate.tv/radio/',
+      parse_url_type: 'animate'
     }
   ])
 end

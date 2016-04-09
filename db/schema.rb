@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409004225) do
+ActiveRecord::Schema.define(version: 20160409011040) do
 
   create_table "radio_stations", force: :cascade do |t|
     t.string   "name",           limit: 255, null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20160409004225) do
     t.integer  "parse_url_type", limit: 4,   null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "radios", force: :cascade do |t|
+    t.string   "name",             limit: 255, default: "", null: false
+    t.string   "description",      limit: 255
+    t.string   "url",              limit: 255, default: "", null: false
+    t.string   "image_url",        limit: 255
+    t.datetime "published_at",                              null: false
+    t.integer  "radio_station_id", limit: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
 end

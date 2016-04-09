@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# `bundle install`
+# ./bin/bundle install --path vendor/bundle
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -35,6 +37,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Simple Rails app configuration
 # https://github.com/laserlemon/figaro
 gem 'figaro'
+
+# Parse HTML
+gem 'nokogiri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

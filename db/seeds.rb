@@ -21,6 +21,13 @@ def setupRadioStations
       url: 'http://ch.nicovideo.jp/secondshot',
       parse_url: 'http://ch.nicovideo.jp/secondshot/video?rss=2.0',
       parse_url_type: 'chnicovideo',
+    },
+    {
+      id: 3,
+      name: 'インターネットラジオステーション＜音泉＞',
+      url: 'http://www.onsen.ag/',
+      parse_url: 'http://www.onsen.ag/',
+      parse_url_type: 'onsen',
     }
   ])
 end

@@ -9,7 +9,8 @@ class OnsenWorker
 
     doc = Nokogiri::HTML(open(radio_station.parse_url))
     doc.xpath('//section[@id="movieList"]//div[@class="listWrap"]//ul[@class="clr"]//li').each do |node|
-      base_url = radio_station.parse_url.sub(/(\/)+$/, '')
+      url = URI.parse(radio_station.parse_url)
+      base_url = url.scheme + '://' + url.host
       name = node.xpath('h4[@class="listItem"]').inner_text
       image_url = base_url + node.xpath('p[@class="thumbnail listItem"]//img').attribute('src').text
       description = ActionView::Base.full_sanitizer.sanitize(node.xpath('p[@class="navigator listItem"]').inner_text)

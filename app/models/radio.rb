@@ -8,7 +8,6 @@ class Radio < ActiveRecord::Base
   def self.create_or_update_with(name, description, url, image_url, published_at, radio_station)
     image_url = download_image(image_url)
     published_at = Time.parse(published_at).to_datetime
-    p image_url
 
     radio = Radio.find_or_initialize_by(name: name, published_at: published_at)
     radio.name = name

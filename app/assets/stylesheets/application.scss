@@ -1,0 +1,131 @@
+// Style Guide
+// Use Google HTML/CSS Style Guide
+// http://qiita.com/Sugima/items/785644372397595644ba
+
+@import 'vendor/sanitize.scss';
+
+$gray: #777;
+$gray-dark: #3D3C40;
+$gray-light: #96A1AD;
+$blue: #448aff;
+$brand: #56b68b;
+$white: #fff;
+$gray-border: #e9eced;
+$gray-background: #f7f7f7;
+$max-width: 768px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $gray-background;
+  color: $gray-dark;
+  font-family: 'Exo', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1;
+  text-align: justify;
+  word-break: break-all;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+header {
+  text-align: center;
+  padding-top: 48px;
+  margin-bottom: 48px;
+  h1 {
+    background-image: url('/assets/images/logo.png');
+    background-size: 24px;
+    background-position: left center;
+    color: $brand;
+    display: inline-block;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 24px + 12px;
+  }
+}
+
+footer {
+  color: $gray-light;
+  font-size: 12px;
+  margin-top: 48px;
+  padding-bottom: 48px;
+  text-align: center;
+  a {
+    color: $gray-light;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  width: 100%;
+}
+
+.spacer {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.radios {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.radios .radio {
+  background-color: $white;
+  border: 1px solid $gray-border;
+  border-radius: 4px;
+  display: block;
+  margin: 4px;
+  width: calc(50% - 8px); // columns -> 2
+  @media (min-width: 425px) { width: calc(33.333333% - 8px); } // columns -> 3
+  @media (min-width: 568px) { width: calc(25% - 8px); } // columns -> 4
+  @media (min-width: 768px) { width: calc(20% - 8px); } // columns -> 5
+
+  .image {
+    background-size: cover;
+    border-bottom: 1px solid $gray-border;
+    display: block;
+    height: 88px;
+  }
+  .inner {
+    padding: 8px;
+  }
+  .name, .description, .pubdate {
+    color: $gray-dark;
+    line-height: 1.25;
+    overflow: hidden;
+  }
+  .name {
+    font-size: 12px;
+    font-weight: 700;
+    max-height: 3 * 12px * 1.25;
+  }
+  .description, .pubdate {
+    color: $gray;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  .description {
+    max-height: 2 * 10px * 1.25;
+  }
+  &:hover {
+    background-color: $gray-background;
+  }
+}

@@ -1,2 +1,29 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<header>
+  <div class="container spacer">
+    <a href="/"><h1>aniradi.me</h1></a>
+  </div>
+</header>
+
+<div class="container spacer">
+
+  <div class="radios">
+<% @radios.each do |radio| %>
+    <div class="radio">
+      <a href="<%= radio.url %>" target="_blank" class="card">
+        <div class="image" style="background-image: url(<%= radio.image_url %>)"></div>
+        <div class="inner">
+          <div class="name"><%= radio.name %></div>
+          <div class="description"><%= radio.description.slice(0, 24) %></div>
+          <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M') %></div>
+        </div>
+      </a>
+    </div>
+<% end %>
+  </div>
+</div>
+
+<footer>
+  <div class="container spacer">
+    <p class="copyright">(C) 2016 <a href="/">aniradi.me</a></p>
+  </div>
+</footer>

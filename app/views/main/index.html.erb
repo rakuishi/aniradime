@@ -16,6 +16,7 @@
           <div class="name"><%= radio.name %></div>
           <div class="description"><%= radio.description.slice(0, 24) %></div>
           <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '') %></div>
+          <div class="station">配信元：<%= radio.radio_station.name %></div>
         </div>
       </a>
     </div>

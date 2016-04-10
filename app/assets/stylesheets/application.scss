@@ -111,7 +111,7 @@ footer {
   .inner {
     padding: 8px;
   }
-  .name, .description, .pubdate {
+  .name, .description, .pubdate, .station {
     color: $gray-dark;
     line-height: 1.25;
     overflow: hidden;
@@ -121,7 +121,7 @@ footer {
     font-weight: 700;
     max-height: 3 * 12px * 1.25;
   }
-  .description, .pubdate {
+  .description, .pubdate, .station {
     color: $gray;
     font-size: 10px;
     margin-top: 4px;

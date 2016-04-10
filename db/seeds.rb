@@ -10,28 +10,28 @@ def setupRadioStations
   RadioStation.first_or_create([
     {
       id: 1,
-      name: 'シーサイドチャンネル',
+      name: 'シーサイド',
       url: 'http://ch.nicovideo.jp/seaside-channel',
       parse_url: 'http://ch.nicovideo.jp/seaside-channel/video?rss=2.0',
       parse_url_type: 'chnicovideo',
     },
     {
       id: 2,
-      name: 'セカンドショットちゃんねる',
+      name: 'セカンドショット',
       url: 'http://ch.nicovideo.jp/secondshot',
       parse_url: 'http://ch.nicovideo.jp/secondshot/video?rss=2.0',
       parse_url_type: 'chnicovideo',
     },
     {
       id: 3,
-      name: 'インターネットラジオステーション＜音泉＞',
+      name: '音泉',
       url: 'http://www.onsen.ag/',
       parse_url: 'http://www.onsen.ag/',
       parse_url_type: 'onsen',
     },
     {
       id: 4,
-      name: 'アニメイトTV ウェブラジオ',
+      name: 'アニメイトTV',
       url: 'http://www.animate.tv/radio/',
       parse_url: 'http://www.animate.tv/radio/',
       parse_url_type: 'animate'

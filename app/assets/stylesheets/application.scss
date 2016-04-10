@@ -81,10 +81,14 @@ footer {
   padding-right: 8px;
 }
 
+.title-date {
+  margin: 0 0 8px 4px;
+}
+
 .radios {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .radios .radio {

@@ -5,21 +5,23 @@
 </header>
 
 <div class="container spacer">
-
+<% @contents.each do |key, value| %>
+  <h2 class="title-date"><%= key %></h2>
   <div class="radios">
-<% @radios.each do |radio| %>
+<% value.each do |radio| %>
     <div class="radio">
       <a href="<%= radio.url %>" target="_blank" class="card">
         <div class="image" style="background-image: url(<%= radio.image_url %>)"></div>
         <div class="inner">
           <div class="name"><%= radio.name %></div>
           <div class="description"><%= radio.description.slice(0, 24) %></div>
-          <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '') %></div>
         </div>
       </a>
     </div>
 <% end %>
   </div>
+<% end %>
 </div>
 
 <footer>

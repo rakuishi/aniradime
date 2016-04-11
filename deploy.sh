@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eu
+set -e
 
 name=`whoami`
 if [ $name != "apps" ]; then

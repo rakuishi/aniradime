@@ -1,4 +1,4 @@
-# Setup Development
+# Setup Development Environment
 
 ```
 $ brew install mysql
@@ -15,7 +15,7 @@ $ mysql -u root
 > GRANT ALL PRIVILEGES ON aniradime_test.* TO aniradime@localhost IDENTIFIED BY 'aniradi.me';
 ```
 
-# Setup Production
+# Setup Production Environment
 
 Sakura VPS 標準インストール（CentOS 6）の初期状態からのセットアップ方法です。
 
@@ -167,7 +167,7 @@ $ cd aniradi.me
 $ ./bin/bundle install --path vendor/bundle
 ```
 
-application.yml を作成し、
+application.yml を作成し、`SECRET_KEY_BASE` と `ANIRADIME_DATABASE_PASSWORD` に適切な値を指定します。
 
 ```
 $ ./bin/bundle exec rake secret

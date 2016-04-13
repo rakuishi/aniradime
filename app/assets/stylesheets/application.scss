@@ -114,21 +114,15 @@ footer {
   .name, .description, .pubdate, .station {
     color: $gray-dark;
     line-height: 1.25;
-    overflow: hidden;
   }
   .name {
     font-size: 12px;
     font-weight: 700;
-    max-height: 3 * 12px * 1.25;
   }
   .description, .pubdate, .station {
     color: $gray;
     font-size: 10px;
     margin-top: 4px;
-  }
-  .description {
-    padding-top: 1px;
-    max-height: 2 * 10px * 1.25;
   }
   &:hover {
     background-color: $gray-background;

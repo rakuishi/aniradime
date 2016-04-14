@@ -20,9 +20,6 @@ RAILS_ENV=${1}
 
 cd /home/apps/aniradi.me
 
-echo "> Stop unicorn..."
-service unicorn stop
-
 echo "> Pull git repo from GitHub..."
 git pull
 

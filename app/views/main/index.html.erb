@@ -1,6 +1,7 @@
 <header>
   <div class="container spacer">
-    <a href="/"><h1>aniradi.me</h1></a>
+    <h1><a href="/">aniradi.me</a></h1>
+    <p>ネット配信されているアニラジの更新情報をまとめています。</p>
   </div>
 </header>
 
@@ -13,7 +14,7 @@
       <div class="image" style="background-image: url(<%= radio.image_url %>)"></div>
       <div class="inner">
         <div class="name"><%= radio.name %></div>
-        <div class="description"><%= radio.description.slice(0, 32) %></div>
+        <div class="description"><%= radio.description.length >= 32 ? "#{radio.description.slice(0, 32)}..." : radio.description %></div>
         <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '') %></div>
         <div class="station">配信元：<%= radio.radio_station.name %></div>
       </div>

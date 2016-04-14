@@ -8,7 +8,7 @@ $gray: #777;
 $gray-dark: #3D3C40;
 $gray-light: #96A1AD;
 $blue: #448aff;
-$brand: #56b68b;
+$brand: #00CDAC;
 $white: #fff;
 $gray-border: #e9eced;
 $gray-background: #f7f7f7;
@@ -40,19 +40,32 @@ p {
 }
 
 header {
+  background: #00CDAC;
+  background: -webkit-linear-gradient(to left, #02AAB0 , #00CDAC);
+  background: linear-gradient(to left, #02AAB0 , #00CDAC);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
   text-align: center;
-  padding-top: 48px;
   margin-bottom: 48px;
+  padding: 24px 0;
   h1 {
     background-image: url('/images/logo.png');
     background-size: 24px;
     background-position: left center;
-    color: $brand;
     display: inline-block;
     font-size: 18px;
     height: 24px;
     line-height: 24px;
+    margin-bottom: 12px;
     padding-left: 24px + 12px;
+    a {
+      color: $white;
+      &:hover { border-bottom: 2px solid $white; }
+    }
+  }
+  p {
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 

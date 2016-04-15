@@ -1,4 +1,6 @@
-# Setup Development Environment
+# Setup Environment
+
+## Development
 
 ```
 $ brew install mysql
@@ -15,7 +17,7 @@ $ mysql -u root
 > GRANT ALL PRIVILEGES ON aniradime_test.* TO aniradime@localhost IDENTIFIED BY 'aniradi.me';
 ```
 
-# Setup Production Environment
+## Production
 
 Sakura VPS 標準インストール（CentOS 6）の初期状態からのセットアップ方法です。
 

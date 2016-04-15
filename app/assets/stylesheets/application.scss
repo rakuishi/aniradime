@@ -5,10 +5,10 @@
 @import 'vendor/sanitize.scss';
 
 $gray: #777;
-$gray-dark: #3D3C40;
-$gray-light: #96A1AD;
+$gray-dark: #3d3c40;
+$gray-light: #96a1ad;
 $blue: #448aff;
-$brand: #00CDAC;
+$brand: #00cdac;
 $white: #fff;
 $gray-border: #e9eced;
 $gray-background: #f7f7f7;
@@ -42,10 +42,10 @@ header {
   background: #00CDAC;
   background: -webkit-linear-gradient(to left, #02AAB0 , #00CDAC);
   background: linear-gradient(to left, #02AAB0 , #00CDAC);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
   text-align: center;
   margin-bottom: 48px;
   padding: 24px 0;
+  @media (min-width: 768px) { padding: 48px 0 24px; text-align: left; }
   h1 {
     background-image: image-url('logo.png');
     background-size: 24px;
@@ -69,14 +69,19 @@ header {
 }
 
 footer {
+  background-color: $white;
   color: $gray-light;
   font-size: 12px;
   margin-top: 48px;
-  padding-bottom: 48px;
+  padding: 48px 0;
   text-align: center;
   a {
     color: $gray-light;
-    &:hover { text-decoration: underline; }
+    text-decoration: underline;
+    &:hover { text-decoration: none; }
+  }
+  .github {
+    margin-bottom: 12px;
   }
 }
 

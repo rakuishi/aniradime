@@ -115,7 +115,11 @@ footer {
   margin: 0 auto;
   text-align: center;
   width: 100px;
-  &:hover { background-color: $brand1; color: $white; }
+  &:hover {
+    background-color: $brand1;
+    color: $white;
+    transition: all 0.2s;
+  }
 }
 
 .radios {

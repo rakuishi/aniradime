@@ -8,7 +8,8 @@ $gray: #777;
 $gray-dark: #3d3c40;
 $gray-light: #96a1ad;
 $blue: #448aff;
-$brand: #00cdac;
+$brand1: #00cdac;
+$brand2: #02aab0;
 $white: #fff;
 $gray-border: #e9eced;
 $gray-background: #f7f7f7;
@@ -39,9 +40,9 @@ p {
 }
 
 header {
-  background: #00CDAC;
-  background: -webkit-linear-gradient(to left, #02AAB0 , #00CDAC);
-  background: linear-gradient(to left, #02AAB0 , #00CDAC);
+  background: $brand1;
+  background: -webkit-linear-gradient(to left, $brand2 , $brand1);
+  background: linear-gradient(to left, $brand2 , $brand1);
   text-align: center;
   margin-bottom: 48px;
   padding: 24px 0;
@@ -100,6 +101,21 @@ footer {
 
 .title-date {
   margin: 0 0 8px 4px;
+}
+
+.btn-more {
+  border: 2px solid $brand1;
+  border-radius: 50%;
+  color: $brand1;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  &:hover { background-color: $brand1; color: $white; }
 }
 
 .radios {

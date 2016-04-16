@@ -33,6 +33,8 @@
     return false;
   };
 
-  $('.js-more').click(event);
+  $(window).ready(function(){
+    $('.js-more').click(event);
+  });
 
 })(jQuery);

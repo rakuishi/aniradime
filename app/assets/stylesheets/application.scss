@@ -138,6 +138,7 @@ footer {
   @media (min-width: 768px) { width: calc(20% - 8px); } // columns -> 5
 
   .image {
+    background-color: $gray-background;
     background-size: cover;
     border-bottom: 1px solid $gray-border;
     border-top-left-radius: 3px;

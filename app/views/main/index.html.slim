@@ -11,7 +11,8 @@ div class="container spacer js-radios"
       div class="radios"
         - value.each do |radio|
           a href="#{radio.url}" target="_blank" class="radio"
-            div class="image" style="background-image: url(#{radio.image_url})"
+            / http://www.appelsiini.net/projects/lazyload/enabled_background.html
+            div class="image lazy" data-original="#{radio.image_url}"
             div class="inner"
               div class="name" #{radio.name}
               - if radio.description.length >= 32

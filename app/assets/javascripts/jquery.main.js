@@ -23,6 +23,7 @@
 
         $html.find('.js-more').click(event);
         $('.js-radios').append($html.find('.js-more'));
+        $('div.lazy').lazyload({effect: 'fadeIn'}).removeClass('lazy');
         isLoading = false;
       }
     });
@@ -34,6 +35,7 @@
   };
 
   $(window).ready(function(){
+    $('div.lazy').lazyload({effect: 'fadeIn'}).removeClass('lazy');
     $('.js-more').click(event);
   });
 

@@ -6,7 +6,7 @@ class Radio < ActiveRecord::Base
   belongs_to :radio_station
 
   def self.create_or_update_with(name, description, url, image_url, published_at, radio_station)
-    image_url = download_image(image_url)
+    image_url = download_image_if_needed(image_url)
     published_at = Time.parse(published_at).to_datetime
 
     radio = Radio.find_or_initialize_by(name: name, published_at: published_at)
@@ -19,7 +19,7 @@ class Radio < ActiveRecord::Base
     radio.save
   end
 
-  def self.download_image(image_url)
+  def self.download_image_if_needed(image_url)
     return image_url unless image_url.present?
 
     md5 = Digest::MD5.new.update(image_url).to_s

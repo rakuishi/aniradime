@@ -19,10 +19,10 @@
         var $html = $(html);
         if ($html.find('.js-radios') === undefined) { return false; }
         if ($html.find('.radios').length === 0) { return false; }
-        $($('.js-radios')).append($html.find('.js-radio'));
+        $('.js-radios').append($html.find('.js-radio'));
 
         $html.find('.js-more').click(event);
-        $($('.js-radios')).append($html.find('.js-more'));
+        $('.js-radios').append($html.find('.js-more'));
         isLoading = false;
       }
     });

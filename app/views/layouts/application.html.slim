@@ -15,8 +15,10 @@ html lang="ja"
     meta name="twitter:description" content="#{description}"
     meta property="og:type" content="website"
     meta property="og:site_name" content="#{title}"
+    meta name="theme-color" content="#00cdac"
     title #{title}
-    link href=asset_path('favicon.png') rel="icon" type="image/x-icon"
+    link href="#{asset_path('favicon.png')}" rel="icon" type="image/x-icon"
+    link href="#{asset_path('icon.png')}" rel="icon" sizes="120x120"
     = stylesheet_link_tag 'application', media: 'all'
     /= csrf_meta_tags
 

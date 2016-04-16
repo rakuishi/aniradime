@@ -1,0 +1,31 @@
+header
+  div class="container spacer"
+    h1
+      a href="/" aniradi.me
+    p ネット配信されているアニラジの更新情報をまとめています。
+
+div class="container spacer js-radios"
+  div class="js-radio"
+    - @contents.each do |key, value|
+      h2 class="title-date" #{key}
+      div class="radios"
+        - value.each do |radio|
+          a href=radio.url target="_blank" class="radio"
+            div class="image" style="background-image: url(#{radio.image_url})"
+            div class="inner"
+              div class="name" #{radio.name}
+              - if radio.description.length >= 32
+                div class="description" #{radio.description.slice(0, 32)}...
+              - else
+                div class="description" #{radio.description}
+              div class="pubdate" #{radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '')}
+              div class="station" 配信元：#{radio.radio_station.name}
+  a href="/page/#{@next}" class="btn-more js-more" LOAD MORE
+
+footer
+  div class="container spacer"
+    p class="github"
+      a href="https://github.com/rakuishi/aniradi.me" target="_blank"
+        img src="#{asset_path('mark-github.svg')}" width="32" height="32" alt="GitHub"
+    p This project is on GitHub.
+    p class="copyright" (C) 2016 aniradi.me

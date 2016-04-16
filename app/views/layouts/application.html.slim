@@ -1,12 +1,21 @@
+- title = 'aniradi.me'
+- description = 'ネット配信されているアニラジの更新情報をまとめています。'
+- keywords = 'aniradi.me,アニラジメ,インターネットラジオ,Webラジオ,アニラジ,アニメ,声優'
 doctype 5
 html lang="ja"
   head
     meta charset="utf-8"
     meta name="author" content="rakuishi"
-    meta name="description" content="ネット配信されているアニラジの更新情報をまとめています。"
+    meta name="description" content="#{description}"
+    meta name="keywords" content="#{keywords}"
     meta name="viewport" content="width=device-width, initial-scale=1"
     meta name="google-site-verification" content="x2STK7g8NEojnsanx5gEVAWcRvt3q63EcECk4sBeT74"
-    title aniradi.me
+    meta name="twitter:card" content="summary"
+    meta name="twitter:title" content="#{title}"
+    meta name="twitter:description" content="#{description}"
+    meta property="og:type" content="website"
+    meta property="og:site_name" content="#{title}"
+    title #{title}
     link href=asset_path('favicon.png') rel="icon" type="image/x-icon"
     = stylesheet_link_tag 'application', media: 'all'
     /= csrf_meta_tags

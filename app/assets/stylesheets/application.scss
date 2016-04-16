@@ -46,7 +46,7 @@ header {
   text-align: center;
   margin-bottom: 48px;
   padding: 24px 0;
-  @media (min-width: 768px) { padding: 48px 0 24px; text-align: left; }
+  @media (min-width: 768px) { padding: 48px 0 24px 4px; text-align: left; }
   h1 {
     background-image: image-url('logo.png');
     background-size: 24px;

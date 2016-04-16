@@ -5,24 +5,26 @@
   </div>
 </header>
 
-<div class="container spacer">
+<div class="container spacer js-radios">
+  <div class="js-radio">
 <% @contents.each do |key, value| %>
-  <h2 class="title-date"><%= key %></h2>
-  <div class="radios">
+    <h2 class="title-date"><%= key %></h2>
+    <div class="radios">
 <% value.each do |radio| %>
-    <a href="<%= radio.url %>" target="_blank" class="radio">
-      <div class="image" style="background-image: url(<%= radio.image_url %>)"></div>
-      <div class="inner">
-        <div class="name"><%= radio.name %></div>
-        <div class="description"><%= radio.description.length >= 32 ? "#{radio.description.slice(0, 32)}..." : radio.description %></div>
-        <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '') %></div>
-        <div class="station">配信元：<%= radio.radio_station.name %></div>
-      </div>
-    </a>
+      <a href="<%= radio.url %>" target="_blank" class="radio">
+        <div class="image" style="background-image: url(<%= radio.image_url %>)"></div>
+        <div class="inner">
+          <div class="name"><%= radio.name %></div>
+          <div class="description"><%= radio.description.length >= 32 ? "#{radio.description.slice(0, 32)}..." : radio.description %></div>
+          <div class="pubdate"><%= radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '') %></div>
+          <div class="station">配信元：<%= radio.radio_station.name %></div>
+        </div>
+      </a>
+<% end %>
+    </div>
 <% end %>
   </div>
-<% end %>
-  <a href="/page/<%= @next %>" class="btn-more">LOAD MORE</a>
+  <a href="/page/<%= @next %>" class="btn-more js-more">LOAD MORE</a>
 </div>
 
 <footer>

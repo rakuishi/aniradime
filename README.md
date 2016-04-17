@@ -1,4 +1,4 @@
-# ![aniradi.me](https://raw.githubusercontent.com/rakuishi/aniradi.me/master/app/assets/images/hero.png)
+# aniradi.me
 
 ## License
 

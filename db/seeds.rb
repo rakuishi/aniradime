@@ -42,6 +42,13 @@ def setupRadioStations
       url: 'http://ch.nicovideo.jp/animedia',
       parse_url: 'http://ch.nicovideo.jp/animedia/video?rss=2.0',
       parse_url_type: 'chnicovideo',
+    },
+    {
+      id: 6,
+      name: 'AG-ON',
+      url: 'http://ondemand.joqr.co.jp/AG-ON/',
+      parse_url: 'http://ondemand.joqr.co.jp/AG-ON/',
+      parse_url_type: 'agon',
     }
   ]
 

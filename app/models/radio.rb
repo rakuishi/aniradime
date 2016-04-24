@@ -6,6 +6,10 @@ class Radio < ActiveRecord::Base
   belongs_to :radio_station
 
   def self.create_or_update_with(name, description, url, image_url, published_at, radio_station)
+    if name.blank? or description.blank? or url.blank? or image_url.blank? or published_at.blank? or radio_station.blank?
+      return
+    end
+
     image_url = download_image_if_needed(image_url)
     published_at = Time.parse(published_at).to_datetime
 
@@ -20,8 +24,6 @@ class Radio < ActiveRecord::Base
   end
 
   def self.download_image_if_needed(image_url)
-    return image_url unless image_url.present?
-
     md5 = Digest::MD5.new.update(image_url).to_s
     public_dir = "#{Rails.root}/public"
     path = "/uploads/#{md5.slice(0, 2)}/#{md5}"

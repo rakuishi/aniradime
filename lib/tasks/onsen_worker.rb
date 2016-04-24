@@ -25,7 +25,7 @@ class OnsenWorker
         description,
         base_url + '/?pid=' + node.attribute('id').text,
         image_url,
-        published_at,
+        Time.parse(published_at).to_datetime,
         radio_station
       )
     end

@@ -16,7 +16,7 @@ class ChnicovideoWorker
           ActionView::Base.full_sanitizer.sanitize(item.elements['description'].text).gsub(/(\s)/, '').slice(0, 255),
           item.elements['link'].text,
           match.size == 2 ? match[1] : nil,
-          item.elements['pubDate'].text,
+          Time.parse(item.elements['pubDate'].text).to_datetime,
           radio_station
         )
       end

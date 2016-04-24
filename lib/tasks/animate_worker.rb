@@ -19,7 +19,7 @@ class AnimateWorker
         ActionView::Base.full_sanitizer.sanitize(text_node.xpath('span[@class="main"]').inner_text).gsub(/(\s)/, ''),
         base_url + node.xpath('a').attribute('href').text,
         base_url + node.xpath('span[@class="img"]//img').attribute('src').text,
-        published_at,
+        Time.parse(published_at).to_datetime,
         radio_station
       )
     end

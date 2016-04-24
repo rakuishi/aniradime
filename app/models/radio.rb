@@ -11,7 +11,6 @@ class Radio < ActiveRecord::Base
     end
 
     image_url = download_image_if_needed(image_url)
-    published_at = Time.parse(published_at).to_datetime
 
     radio = Radio.find_or_initialize_by(name: name, published_at: published_at)
     radio.name = name

@@ -13,6 +13,7 @@ every 10.minute do
   runner 'AnimateWorker.task'
   runner 'ChnicovideoWorker.task'
   runner 'OnsenWorker.task'
+  runner 'AgonWorker.task'
 end
 
 # Example:

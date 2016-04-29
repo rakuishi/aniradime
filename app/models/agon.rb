@@ -4,10 +4,9 @@ require 'action_view'
 
 class Agon
   def self.load
-    radio_station = RadioStation.find_parse_url_type('agon').first()
-    return unless radio_station.present?
-
     radios = []
+    radio_station = RadioStation.find_parse_url_type('agon').first()
+    return radios unless radio_station.present?
 
     doc = Nokogiri::HTML(open(radio_station.parse_url))
     doc.xpath('//a[@class="cb_link"]').each do |node|

@@ -4,10 +4,10 @@ require 'action_view'
 
 class Animate
   def self.load
-    radio_station = RadioStation.find_parse_url_type('animate').first()
-    return unless radio_station.present?
-
     radios = []
+    radio_station = RadioStation.find_parse_url_type('animate').first()
+    return radios unless radio_station.present?
+
     url = URI.parse(radio_station.parse_url)
     base_url = url.scheme + '://' + url.host
 

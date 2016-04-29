@@ -26,7 +26,7 @@ class Chnicovideo
       name: item.elements['title'].text,
       description: ActionView::Base.full_sanitizer.sanitize(item.elements['description'].text).gsub(/(\s)/, '').slice(0, 255),
       url: item.elements['link'].text,
-      image_url: match.size == 2 ? match[1] : nil,
+      image_url: match.present? && match.size == 2 ? match[1] : nil,
       published_at: Time.parse(item.elements['pubDate'].text).to_datetime,
       radio_station: radio_station
     }

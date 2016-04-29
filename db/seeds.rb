@@ -49,6 +49,13 @@ def setupRadioStations
       url: 'http://ondemand.joqr.co.jp/AG-ON/',
       parse_url: 'http://ondemand.joqr.co.jp/AG-ON/',
       parse_url_type: 'agon',
+    },
+    {
+      id: 7,
+      name: 'Lantis',
+      url: 'http://lantis-net.com/',
+      parse_url: 'http://lantis-net.com/rss/news.xml',
+      parse_url_type: 'lantis',
     }
   ]
 

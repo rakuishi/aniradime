@@ -2,38 +2,43 @@ require 'nokogiri'
 require 'open-uri'
 require 'action_view'
 
-class AgonWorker
-  def self.task
+class Agon
+  def self.load
     radio_station = RadioStation.find_parse_url_type('agon').first()
     return unless radio_station.present?
 
+    radios = []
+
     doc = Nokogiri::HTML(open(radio_station.parse_url))
     doc.xpath('//a[@class="cb_link"]').each do |node|
-      save_contents(node.attribute('href').text, radio_station)
+      radio = parse(node.attribute('href').text, radio_station)
+      radios.push(radio) if radio.present?
     end
+
+    radios
   end
 
-  def self.save_contents(url, radio_station)
+  def self.parse(url, radio_station)
     # ラジオ詳細ページの URL をチェックする
     return unless url.start_with?('http://ondemand.joqr.co.jp/AG-ON/contents/')
 
     doc = Nokogiri::HTML(open(url))
     node = doc.xpath('//div[@id="secinfo"]')
-    return if node.blank?
+    return nil if node.blank?
 
     name = sanitize(node.xpath('div[@id="right"]/div[@id="Nleft"]//h3[@class="sinf_title"]').inner_text)
     description = sanitize(node.xpath('div[@id="left"]/p[@class="sinf_txt"]').inner_text)
     thumbnail = get_thumbnail(node.xpath('div[@id="left"]//img'))
     published_at = get_published_at(node.xpath('div[@id="right"]/div[@id="Nleft"]//ul[@class="sinf_det"]/li'))
 
-    Radio.create_or_update_with(
-      name,
-      description,
-      url,
-      thumbnail,
-      published_at,
-      radio_station
-    )
+    {
+      name: name,
+      description: description,
+      url: url,
+      image_url: thumbnail,
+      published_at: published_at,
+      radio_station: radio_station
+    }
   end
 
   def self.get_published_at(nodes)

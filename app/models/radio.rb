@@ -5,21 +5,25 @@ require 'fileutils'
 class Radio < ActiveRecord::Base
   belongs_to :radio_station
 
-  def self.create_or_update_with(name, description, url, image_url, published_at, radio_station)
-    if name.blank? or description.blank? or url.blank? or image_url.blank? or published_at.blank? or radio_station.blank?
+  def self.create_or_update_with_radios(radios)
+    radios.each do |radio|
+      create_or_update_with_radio(radio)
+    end
+  end
+
+  def self.create_or_update_with_radio(radio)
+    if radio.blank? or radio[:name].blank? or radio[:description].blank? or radio[:url].blank? or radio[:image_url].blank? or radio[:published_at].blank? or radio[:radio_station].blank?
       return
     end
 
-    image_url = download_image_if_needed(image_url)
-
-    radio = Radio.find_or_initialize_by(name: name, published_at: published_at)
-    radio.name = name
-    radio.description = description
-    radio.url = url
-    radio.image_url = image_url
-    radio.published_at = published_at
-    radio.radio_station = radio_station
-    radio.save
+    Radio.find_or_initialize_by(name: radio[:name], published_at: radio[:published_at]).update_attributes(
+      name: radio[:name],
+      description: radio[:description],
+      url: radio[:url],
+      image_url: download_image_if_needed(radio[:image_url]),
+      published_at: radio[:published_at],
+      radio_station: radio[:radio_station],
+    )
   end
 
   def self.download_image_if_needed(image_url)

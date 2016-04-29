@@ -10,10 +10,7 @@
 # ./bin/bundle exec whenever --clear-cron
 
 every 10.minute do
-  runner 'AnimateWorker.task'
-  runner 'ChnicovideoWorker.task'
-  runner 'OnsenWorker.task'
-  runner 'AgonWorker.task'
+  runner 'RadioWorker.task'
 end
 
 # Example:

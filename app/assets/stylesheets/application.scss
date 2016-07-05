@@ -1,9 +1,6 @@
 // Style Guide
 // Use Google HTML/CSS Style Guide
-// http://qiita.com/Sugima/items/785644372397595644ba
-
-@import 'vendor/exo.scss';
-@import 'vendor/sanitize.scss';
+// https://google.github.io/styleguide/htmlcssguide.xml
 
 $gray: #777;
 $gray-dark: #3d3c40;
@@ -15,6 +12,10 @@ $white: #fff;
 $gray-border: #e9eced;
 $gray-background: #f7f7f7;
 $max-width: 768px;
+$root-cursor: inherit !default;
+
+@import 'vendor/oxygen.scss';
+@import 'vendor/sanitize.scss';
 
 * {
   box-sizing: border-box;
@@ -23,7 +24,7 @@ $max-width: 768px;
 body {
   background: $gray-background;
   color: $gray-dark;
-  font-family: 'Exo', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
@@ -53,7 +54,7 @@ header {
     background-size: 24px;
     background-position: left center;
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     height: 24px;
     line-height: 24px;
     margin-bottom: 12px;
@@ -98,6 +99,7 @@ footer {
 }
 
 .title-date {
+  font-size: 16px;
   margin: 0 0 8px 4px;
 }
 

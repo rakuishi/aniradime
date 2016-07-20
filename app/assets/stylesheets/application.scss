@@ -14,7 +14,7 @@ $gray-background: #f7f7f7;
 $max-width: 768px;
 $root-cursor: inherit !default;
 
-@import 'vendor/oxygen.scss';
+@import 'vendor/muli.scss';
 @import 'vendor/sanitize.scss';
 
 * {
@@ -24,7 +24,7 @@ $root-cursor: inherit !default;
 body {
   background: $gray-background;
   color: $gray-dark;
-  font-family: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: 'Muli', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
@@ -47,8 +47,7 @@ header {
   background: linear-gradient(to left, $brand2 , $brand1);
   text-align: center;
   margin-bottom: 48px;
-  padding: 24px 0;
-  @media (min-width: 768px) { padding: 48px 0 24px 4px; text-align: left; }
+  padding: 48px 0;
   h1 {
     background-image: image-url('logo.png');
     background-size: 24px;
@@ -99,7 +98,7 @@ footer {
 }
 
 .title-date {
-  font-size: 16px;
+  font-size: 14px;
   margin: 0 0 8px 4px;
 }
 

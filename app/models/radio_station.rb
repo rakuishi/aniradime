@@ -5,6 +5,7 @@ class RadioStation < ActiveRecord::Base
     animate: 2,
     agon: 3,
     lantis: 4,
+    hibiki: 5,
   }
 
   scope :find_parse_url_type, -> (type) { where(parse_url_type: RadioStation.parse_url_types[type]) }

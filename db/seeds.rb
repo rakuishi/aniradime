@@ -56,6 +56,13 @@ def setupRadioStations
       url: 'http://lantis-net.com/',
       parse_url: 'http://lantis-net.com/rss/news.xml',
       parse_url_type: 'lantis',
+    },
+    {
+      id: 8,
+      name: 'HiBiKi Radio Station',
+      url: 'http://hibiki-radio.jp/',
+      parse_url: 'http://hibiki-radio.jp/',
+      parse_url_type: 'hibiki',
     }
   ]
 

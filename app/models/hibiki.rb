@@ -25,7 +25,7 @@ class Hibiki
       end
     end
 
-    p radios
+    radios
   end
 
   def self.parse(item, radio_station)

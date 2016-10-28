@@ -14,7 +14,7 @@ div class="container spacer js-radios"
       h2 class="title-date" #{key}
       div class="radios"
         - value.each do |radio|
-          a href="#{radio.url}" target="_blank" class="radio" ontouchstart="" itemscope="" itemtype="http://schema.org/MediaObject"
+          a href="#{radio.url}" target="_blank" class="radio" itemscope="" itemtype="http://schema.org/MediaObject"
             / http://www.appelsiini.net/projects/lazyload/enabled_background.html
             div class="image lazy" data-original="#{radio.image_url}"
             div class="inner"

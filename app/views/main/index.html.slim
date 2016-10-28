@@ -1,8 +1,12 @@
 header
   div class="container spacer"
-    h1
-      a href="/" aniradi.me
-    p ネット配信されているアニラジの更新情報をまとめています。
+    a href="/"
+      h1
+        img src="#{asset_path('hero.png')}" width="148" height="32" alt="aniradime"
+
+div class="remark"
+  div class="container spacer"
+    p このサイトでは、ネット配信されているアニラジの更新情報をまとめています。情報は 10 分毎に更新されます。
 
 div class="container spacer js-radios"
   div class="js-radio"
@@ -10,7 +14,7 @@ div class="container spacer js-radios"
       h2 class="title-date" #{key}
       div class="radios"
         - value.each do |radio|
-          a href="#{radio.url}" target="_blank" class="radio" itemscope="" itemtype="http://schema.org/MediaObject"
+          a href="#{radio.url}" target="_blank" class="radio" ontouchstart="" itemscope="" itemtype="http://schema.org/MediaObject"
             / http://www.appelsiini.net/projects/lazyload/enabled_background.html
             div class="image lazy" data-original="#{radio.image_url}"
             div class="inner"
@@ -29,4 +33,4 @@ footer
       a href="https://github.com/rakuishi/aniradi.me" target="_blank"
         img src="#{asset_path('mark-github.svg')}" width="32" height="32" alt="GitHub"
     p This project is on GitHub.
-    p class="copyright" (C) 2016 aniradi.me
+    p class="copyright" (C) 2016 aniradime

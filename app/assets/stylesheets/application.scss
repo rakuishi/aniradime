@@ -6,15 +6,14 @@ $gray: #777;
 $gray-dark: #3d3c40;
 $gray-light: #96a1ad;
 $blue: #448aff;
-$brand1: #00cdac;
-$brand2: #02aab0;
+$brand: #00cdac;
 $white: #fff;
 $gray-border: #e9eced;
 $gray-background: #f7f7f7;
-$max-width: 768px;
+$max-width: 960px;
 $root-cursor: inherit !default;
+$opacity: 0.75;
 
-@import 'vendor/muli.scss';
 @import 'vendor/sanitize.scss';
 
 * {
@@ -24,7 +23,7 @@ $root-cursor: inherit !default;
 body {
   background: $gray-background;
   color: $gray-dark;
-  font-family: 'Muli', 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: 'Lato', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
@@ -42,32 +41,13 @@ p {
 }
 
 header {
-  background: $brand1;
-  background: -webkit-linear-gradient(to left, $brand2 , $brand1);
-  background: linear-gradient(to left, $brand2 , $brand1);
+  background: white;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.12);
+  margin-bottom: 24px;
+  padding: 12px 0;
   text-align: center;
-  margin-bottom: 48px;
-  padding: 48px 0;
-  h1 {
-    background-image: image-url('logo.png');
-    background-size: 24px;
-    background-position: left center;
-    display: inline-block;
-    font-size: 20px;
-    height: 24px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    padding-left: 24px + 12px;
-    a {
-      color: $white;
-      &:hover { border-bottom: 2px solid $white; }
-    }
-  }
-  p {
-    color: $white;
-    font-size: 12px;
-    font-weight: bold;
-  }
+  h1 { display: inline-block; }
+  h1:hover { opacity: $opacity; }
 }
 
 footer {
@@ -97,15 +77,24 @@ footer {
   padding-right: 8px;
 }
 
+.remark {
+  margin-bottom: 24px;
+  p {
+    color: $gray-dark;
+    font-size: 12px;
+    padding: 4px;
+  }
+}
+
 .title-date {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 0 8px 4px;
 }
 
 .btn-more {
-  border: 2px solid $brand1;
+  border: 2px solid $brand;
   border-radius: 50%;
-  color: $brand1;
+  color: $brand;
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -115,7 +104,7 @@ footer {
   text-align: center;
   width: 100px;
   &:hover {
-    background-color: $brand1;
+    background-color: $brand;
     color: $white;
     transition: all 0.2s;
   }
@@ -129,8 +118,7 @@ footer {
 
 .radios .radio {
   background-color: $white;
-  border: 1px solid $gray-border;
-  border-radius: 4px;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12);
   display: block;
   margin: 4px;
   width: calc(50% - 8px); // columns -> 2
@@ -142,9 +130,6 @@ footer {
     background-color: $gray-background;
     background-size: cover;
     background-position: center;
-    border-bottom: 1px solid $gray-border;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
     display: block;
     height: 88px;
   }
@@ -166,5 +151,6 @@ footer {
   }
   &:hover {
     background-color: $gray-background;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.12);
   }
 }

@@ -58,7 +58,6 @@ ec2-user ALL=(ALL) ALL
 GitHub に公開鍵を登録して、レポジトリをクローンします。
 
 ```
-$ sudo yum install git
 $ ssh-keygen -t rsa -b 4096 -C "rakuishi@gmail.com"
 $ cat .ssh/id_rsa.pub
 $ git clone git@github.com:rakuishi/aniradime.git aniradime

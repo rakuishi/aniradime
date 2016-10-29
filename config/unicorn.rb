@@ -1,8 +1,8 @@
-APP_PATH = "/home/apps/aniradi.me"
+APP_PATH = "/home/ec2-user/aniradime"
 
 worker_processes 4
 working_directory APP_PATH
-listen "/var/run/unicorn/unicorn.socket"
+listen "/var/run/unicorn/aniradime.socket"
 pid APP_PATH + "/tmp/pids/unicorn.pid"
 stderr_path APP_PATH + "/log/unicorn.log"
 stdout_path APP_PATH + "/log/unicorn.log"

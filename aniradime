@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# unicorn - this script starts and stops the unicorn
+#
+# chkconfig:   3456 85 35
+# description: unicorn
+# processname: unicorn
+
+RAILS_ENV="production"
+USER="ec2-user"
+APP_PATH="/home/ec2-user/aniradime"
+PID="${APP_PATH}/tmp/pids/unicorn.pid"
+
+start()
+{
+  sudo -u ${USER} bash -login -c "cd ${APP_PATH} && unicorn_rails -c ${APP_PATH}/config/unicorn.rb -E ${RAILS_ENV} -D"
+  return 0
+}
+
+stop()
+{
+  if [ ! -e $PID ]; then
+    return 0
+  fi
+  kill -QUIT `cat ${PID}`
+  rm -f $PID
+  return 0
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart|force-reload|reload)
+    stop
+    start
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart|force-reload|reload}"
+    exit 2
+esac
+

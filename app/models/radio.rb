@@ -40,4 +40,25 @@ class Radio < ActiveRecord::Base
       image_url
     end
   end
+
+  def self.all_to_json(offset, limit)
+    Radio.includes(:radio_station).references(:radio_stations).order(published_at: :desc).offset(offset).limit(limit).map(&:to_json)
+  end
+
+  def to_json
+    {
+      id: self.id,
+      name: self.name,
+      url: self.url,
+      image_url: "#{Rails.application.config.base_uri}#{self.image_url}",
+      description: self.description,
+      published_at: self.published_at,
+      radio_station_id: self.radio_station_id,
+      station: {
+        id: self.radio_station.id,
+        name: self.radio_station.name,
+        url: self.radio_station.url,
+      }
+    }
+  end
 end

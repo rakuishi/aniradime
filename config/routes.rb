@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   root 'main#index'
   get 'page/:num' => 'main#index'
 
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+      get 'feeds' => 'api#get_feeds'
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

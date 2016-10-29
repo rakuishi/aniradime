@@ -36,10 +36,7 @@ $ sudo yum install gcc gcc-c++ autoconf make wget git zlib-devel openssl-devel l
 ## Time Zone
 
 ```
-$ sudo vi /etc/sysconfig/clock 
-$ cat /etc/sysconfig/clock 
-ZONE="Asia/Tokyo"
-UTC=false
+$ sudo cp /usr/share/zoneinfo/Japan /etc/localtime
 ```
 
 ## Password

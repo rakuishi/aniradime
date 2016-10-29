@@ -3,7 +3,7 @@
 set -e
 
 name=`whoami`
-if [ $name != "apps" ]; then
+if [ $name != "ec2-user" ]; then
   echo "Error: This User denied."
   exit 1
 fi
@@ -18,7 +18,7 @@ esac
 
 RAILS_ENV=${1}
 
-cd /home/apps/aniradi.me
+cd /home/ec2-user/aniradime
 
 echo "> Pull git repo from GitHub..."
 git pull
@@ -39,4 +39,4 @@ echo "> Update crontab..."
 ./bin/bundle exec whenever -s "environment=${RAILS_ENV}" --update-cron
 
 echo "> Restart unicorn..."
-service unicorn restart
+service aniradime restart

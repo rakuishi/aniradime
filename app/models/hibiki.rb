@@ -14,11 +14,14 @@ class Hibiki
     weeks.each do |week|
       url = sprintf(base_url, week)
       response = get_response_body(url)
-      return radios unless response.present?
+      next radios unless response.present?
 
       json = JSON.parse(response)
-      return radios unless json.present?
-      
+      next radios unless json.present?
+      # if error message returns, the json is not array
+      # {"result":24,"error_message":"invalid request"}
+      next radios unless json.kind_of?(Array)
+
       json.each do |item|
         radio = parse(item, radio_station)
         radios.push(radio) if radio.present?
@@ -29,6 +32,8 @@ class Hibiki
   end
 
   def self.parse(item, radio_station)
+    return nil if item['episode_updated_at'].blank?
+
     {
       name: item['name'],
       description: item['description'].slice(0, 255),

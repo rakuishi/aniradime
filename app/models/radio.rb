@@ -61,6 +61,10 @@ class Radio < ActiveRecord::Base
   end
 
   def to_json
+    if self.radio_station.id == 3
+      self.url = self.url.gsub('http://www.onsen.ag/?pid=', 'http://www.onsen.ag/#')
+    end
+
     {
       id: self.id,
       name: self.name,

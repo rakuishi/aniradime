@@ -41,8 +41,23 @@ class Radio < ActiveRecord::Base
     end
   end
 
-  def self.all_to_json(offset, limit)
-    Radio.includes(:radio_station).references(:radio_stations).order(published_at: :desc).offset(offset).limit(limit).map(&:to_json)
+  def self.all_to_json(num)
+    num = num.to_i - 1
+
+    json = []
+    for i in (num * 7)..(num * 7 + 6)
+      datetime = DateTime.now - i.day
+      radios = Radio.includes(:radio_station).references(:radio_stations).order(published_at: :desc)
+        .where('published_at BETWEEN ? AND ?', datetime.beginning_of_day, datetime.end_of_day).all.map(&:to_json)
+      next if radios.length == 0
+
+      json << {
+        date: datetime.beginning_of_day.iso8601,
+        radios: radios
+      }
+    end
+
+    json
   end
 
   def to_json

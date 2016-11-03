@@ -52,7 +52,7 @@ class Radio < ActiveRecord::Base
       url: self.url,
       image_url: "#{Rails.application.config.base_uri}#{self.image_url}",
       description: self.description,
-      published_at: self.published_at,
+      published_at: self.published_at.iso8601,
       radio_station_id: self.radio_station_id,
       station: {
         id: self.radio_station.id,

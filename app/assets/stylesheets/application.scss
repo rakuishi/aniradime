@@ -149,13 +149,28 @@ footer {
     line-height: 1.25;
   }
   .name {
+    display: -webkit-box;
     font-size: 12px;
     font-weight: 700;
+    height: 12 * 1.25 * 2px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .description, .pubdate, .station {
+    display: -webkit-box;
     color: $gray;
     font-size: 10px;
     margin-top: 4px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .description {
+    height: 10 * 1.25 * 2px;
+  }
+  .pubdate, .station {
+    height: 10 * 1.25 * 1px;
   }
   &:hover {
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12), 0px 4px 8px 0px rgba(0,0,0,0.18);

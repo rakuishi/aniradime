@@ -26,10 +26,7 @@ div class="container spacer js-radios"
             div class="image lazy" data-original="#{radio.image_url}"
             div class="inner"
               div class="name" itemprop="name" #{radio.name}
-              - if radio.description.length >= 32
-                div class="description" itemprop="description" #{radio.description.slice(0, 32)}...
-              - else
-                div class="description" itemprop="description" #{radio.description}
+              div class="description" itemprop="description" #{radio.description}
               div class="pubdate" itemprop="uploadDate" #{radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '')}
               div class="station" itemprop="publisher" 配信元：#{radio.radio_station.name}
   a href="/page/#{@next}" class="btn-more js-more" LOAD MORE

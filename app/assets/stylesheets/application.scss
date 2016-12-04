@@ -1,14 +1,13 @@
 // Style Guide
 // Use Google HTML/CSS Style Guide
 // https://google.github.io/styleguide/htmlcssguide.xml
+// https://coolors.co/e4572e-17bebb-ffc914-3e363f-dd403a
 
-$gray: #777;
-$gray-dark: #3d3c40;
-$gray-light: #96a1ad;
-$blue: #448aff;
-$brand: #00cdac;
+$gray: #726C73;
+$gray-dark: #3E363F;
+$blue: #17BEBB;
+$brand: #17BEBB;
 $white: #fff;
-$gray-border: #e9eced;
 $gray-background: #f7f7f7;
 $max-width: 960px;
 $root-cursor: inherit !default;
@@ -41,11 +40,10 @@ p {
 }
 
 header {
-  background: white;
-  background-image: linear-gradient(to right, $brand, #02aab0);
+  background: $brand;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.12);
   margin-bottom: 24px;
-  padding: 12px 0;
+  padding: 8px 0;
   text-align: center;
   h1 { display: inline-block; }
   h1:hover { opacity: $opacity; }
@@ -53,7 +51,7 @@ header {
 
 footer {
   background-color: $white;
-  color: $gray-light;
+  color: $gray;
   font-size: 12px;
   margin-top: 48px;
   padding: 48px 0;
@@ -128,7 +126,7 @@ footer {
 .radios .radio {
   background-color: $white;
   box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12);
-  border-radius: 4px;
+  border-radius: 2px;
   display: block;
   margin: 4px;
   width: calc(50% - 8px); // columns -> 2
@@ -140,8 +138,8 @@ footer {
     background-color: $gray-background;
     background-size: cover;
     background-position: center;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     display: block;
     height: 88px;
   }

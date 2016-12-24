@@ -63,6 +63,13 @@ def setupRadioStations
       url: 'http://hibiki-radio.jp/',
       parse_url: 'http://hibiki-radio.jp/',
       parse_url_type: 'hibiki',
+    },
+    {
+      id: 9,
+      name: '東山奈央のドリーム＊シアター',
+      url: 'http://ch.nicovideo.jp/nao-dream',
+      parse_url: 'http://ch.nicovideo.jp/nao-dream/video?rss=2.0',
+      parse_url_type: 'chnicovideo',
     }
   ]
 

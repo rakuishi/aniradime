@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
   get 'page/:num' => 'main#index'
+  get 'feed' => 'feed#index', :defaults => { :format => 'atom' }
 
   namespace :api, { format: 'json' } do
     namespace :v1 do

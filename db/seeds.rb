@@ -70,7 +70,14 @@ def setupRadioStations
       url: 'http://ch.nicovideo.jp/nao-dream',
       parse_url: 'http://ch.nicovideo.jp/nao-dream/video?rss=2.0',
       parse_url_type: 'chnicovideo',
-    }
+    },
+    {
+      id: 10,
+      name: '巽悠衣子チャンネル',
+      url: 'http://ch.nicovideo.jp/tatsumiyuiko',
+      parse_url: 'http://ch.nicovideo.jp/tatsumiyuiko/video?rss=2.0',
+      parse_url_type: 'chnicovideo',
+    },
   ]
 
   stations.each do |station|

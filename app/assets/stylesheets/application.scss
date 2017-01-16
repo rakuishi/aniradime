@@ -3,6 +3,10 @@
 // https://google.github.io/styleguide/htmlcssguide.xml
 // https://coolors.co/e4572e-17bebb-ffc914-3e363f-dd403a
 
+//////////////////////////////////////////////////
+// Variable
+//////////////////////////////////////////////////
+
 $gray: #726C73;
 $gray-dark: #3E363F;
 $blue: #17BEBB;
@@ -13,11 +17,17 @@ $max-width: 960px;
 $root-cursor: inherit !default;
 $opacity: 0.75;
 
+//////////////////////////////////////////////////
+// Import
+//////////////////////////////////////////////////
+
 @import 'vendor/sanitize.scss';
 
-* {
-  box-sizing: border-box;
-}
+//////////////////////////////////////////////////
+// Base
+//////////////////////////////////////////////////
+
+* { box-sizing: border-box; }
 
 body {
   background: $gray-background;
@@ -30,31 +40,39 @@ body {
   word-break: break-all;
 }
 
-a {
-  color: $blue;
-  text-decoration: none;
+a { color: $blue; text-decoration: none; }
+p { line-height: 1.5; }
+
+//////////////////////////////////////////////////
+// Layout
+//////////////////////////////////////////////////
+
+._container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-p {
-  line-height: 1.5;
-}
-
-header {
+.site-header {
   background: $brand;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.12);
   margin-bottom: 24px;
-  padding: 8px 0;
+  padding: 8px;
   text-align: center;
   h1 { display: inline-block; }
   h1:hover { opacity: $opacity; }
 }
 
-footer {
+.site-footer {
   background-color: $white;
   color: $gray;
   font-size: 12px;
   margin-top: 48px;
-  padding: 48px 0;
+  padding: 48px 8px;
   text-align: center;
   p { margin-bottom: 6px; }
   p:last-of-type { margin-bottom: 0; }
@@ -64,20 +82,8 @@ footer {
   }
 }
 
-.container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $max-width;
-  width: 100%;
-}
-
-.spacer {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.remark {
+.site-description {
+  @extend ._container;
   margin-bottom: 24px;
   p {
     color: $gray-dark;
@@ -87,19 +93,84 @@ footer {
   }
 }
 
-.adsense {
+.google-adsense {
+  @extend ._container;
   margin-bottom: 24px;
   max-width: 728px;
   text-align: center;
-  .adsbygoogle { display: inline-block; }
+  > .adsbygoogle { display: inline-block; }
 }
 
-.title-date {
+.radio-week-name {
   font-size: 16px;
   margin: 0 0 8px 4px;
 }
 
-.btn-more {
+.radio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  > .radio-list-item {
+    margin: 4px;
+    width: calc(50% - 8px); // columns -> 2
+    @media (min-width: 425px) { width: calc(33.333333% - 8px); } // columns -> 3
+    @media (min-width: 568px) { width: calc(25% - 8px); } // columns -> 4
+    @media (min-width: 768px) { width: calc(20% - 8px); } // columns -> 5
+  }
+}
+
+.radio-list-item {
+  background-color: $white;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12);
+  border-radius: 2px;
+  display: block;
+  &:hover { box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12), 0px 4px 8px 0px rgba(0,0,0,0.18); }
+
+  > .image {
+    background-color: $gray-background;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: block;
+    height: 88px;
+  }
+}
+
+.radio-list-item-inner {
+  padding: 8px;
+
+  > .name, > .description, > .pubdate, > .station {
+    color: $gray-dark;
+    line-height: 1.25;
+  }
+  > .name {
+    display: -webkit-box;
+    font-size: 12px;
+    font-weight: 700;
+    height: 12 * 1.25 * 2px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  > .description, > .pubdate, > .station {
+    display: -webkit-box;
+    color: $gray;
+    font-size: 10px;
+    margin-top: 4px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  > .description {
+    height: 10 * 1.25 * 2px;
+  }
+  > .pubdate, > .station {
+    height: 10 * 1.25 * 1px;
+  }
+}
+
+.button-more {
   border: 2px solid $brand;
   border-radius: 50%;
   color: $brand;
@@ -115,67 +186,5 @@ footer {
     background-color: $brand;
     color: $white;
     transition: all 0.2s;
-  }
-}
-
-.radios {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.radios .radio {
-  background-color: $white;
-  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.12), 0px 1px 1px 0px rgba(0,0,0,0.12);
-  border-radius: 2px;
-  display: block;
-  margin: 4px;
-  width: calc(50% - 8px); // columns -> 2
-  @media (min-width: 425px) { width: calc(33.333333% - 8px); } // columns -> 3
-  @media (min-width: 568px) { width: calc(25% - 8px); } // columns -> 4
-  @media (min-width: 768px) { width: calc(20% - 8px); } // columns -> 5
-
-  .image {
-    background-color: $gray-background;
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    display: block;
-    height: 88px;
-  }
-  .inner {
-    padding: 8px;
-  }
-  .name, .description, .pubdate, .station {
-    color: $gray-dark;
-    line-height: 1.25;
-  }
-  .name {
-    display: -webkit-box;
-    font-size: 12px;
-    font-weight: 700;
-    height: 12 * 1.25 * 2px;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  .description, .pubdate, .station {
-    display: -webkit-box;
-    color: $gray;
-    font-size: 10px;
-    margin-top: 4px;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  .description {
-    height: 10 * 1.25 * 2px;
-  }
-  .pubdate, .station {
-    height: 10 * 1.25 * 1px;
-  }
-  &:hover {
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12), 0px 4px 8px 0px rgba(0,0,0,0.18);
   }
 }

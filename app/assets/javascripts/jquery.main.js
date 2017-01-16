@@ -18,12 +18,11 @@
 
         var $html = $(html);
         if ($html.find('.js-radios') === undefined) { return false; }
-        if ($html.find('.radios').length === 0) { return false; }
         $('.js-radios').append($html.find('.js-radio'));
 
         $html.find('.js-more').click(event);
         $('.js-radios').append($html.find('.js-more'));
-        $('div.lazy').lazyload({effect: 'fadeIn'}).removeClass('lazy');
+        $('.js-lazy').lazyload({effect: 'fadeIn'}).removeClass('js-lazy');
         isLoading = false;
       }
     });
@@ -35,7 +34,7 @@
   };
 
   $(window).ready(function(){
-    $('div.lazy').lazyload({effect: 'fadeIn'}).removeClass('lazy');
+    $('.js-lazy').lazyload({effect: 'fadeIn'}).removeClass('js-lazy');
     $('.js-more').click(event);
   });
 

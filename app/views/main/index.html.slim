@@ -3,9 +3,11 @@ header class="site-header"
     a href="/" class="logo"
       h1
         img src="#{asset_path('hero.png')}" width="148" height="32" alt="aniradime"
-
-/ div class="site-description"
-  p このサイトでは、ネット配信されているアニラジの更新情報をまとめています。情報は 10 分毎に更新されます。<br/>更新情報を呟く <a href="https://twitter.com/aniradime" target="_blank">Twitter Bot</a> 始めました。
+    div class="icon"
+      a href="https://twitter.com/aniradime" target="_blank"
+        img src="#{asset_path('twitter.svg')}" width="24" height="24" alt="Twitter"
+      a href="https://github.com/rakuishi/aniradime" target="_blank"
+        img src="#{asset_path('github.svg')}" width="24" height="24" alt="GitHub"
 
 div class="google-adsense"
   script async="true" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
@@ -30,8 +32,5 @@ main class="radio-container js-radios"
   a href="/page/#{@next}" class="button-more js-more" LOAD MORE
 
 footer class="site-footer"
-  p class="github"
-    a href="https://github.com/rakuishi/aniradime" target="_blank"
-      img src="#{asset_path('mark-github.svg')}" width="32" height="32" alt="GitHub"
   p This project, which is developed by <a href="http://rakuishi.com" target="_blank">rakuishi</a>, is on GitHub.
   p class="copyright" (C) 2016 aniradime

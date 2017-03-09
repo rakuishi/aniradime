@@ -1,9 +1,10 @@
 header class="site-header"
-  a href="/"
-    h1
-      img src="#{asset_path('hero.png')}" width="148" height="32" alt="aniradime"
+  div class="inner"
+    a href="/" class="logo"
+      h1
+        img src="#{asset_path('hero.png')}" width="148" height="32" alt="aniradime"
 
-div class="site-description"
+/ div class="site-description"
   p このサイトでは、ネット配信されているアニラジの更新情報をまとめています。情報は 10 分毎に更新されます。<br/>更新情報を呟く <a href="https://twitter.com/aniradime" target="_blank">Twitter Bot</a> 始めました。
 
 div class="google-adsense"
@@ -13,7 +14,7 @@ div class="google-adsense"
   javascript:
     (adsbygoogle = window.adsbygoogle || []).push({});
 
-main class="_container js-radios"
+main class="radio-container js-radios"
   div class="js-radio"
     - @contents.each do |key, value|
       h2 class="radio-week-name" #{key}
@@ -25,7 +26,6 @@ main class="_container js-radios"
             div class="radio-list-item-inner"
               div class="name" itemprop="name" #{radio.name}
               div class="description" itemprop="description" #{radio.description}
-              div class="pubdate" itemprop="uploadDate" #{radio.published_at.strftime('%Y/%m/%d %H:%M').gsub(' 00:00', '')}
               div class="station" itemprop="publisher" 配信元：#{radio.radio_station.name}
   a href="/page/#{@next}" class="button-more js-more" LOAD MORE
 

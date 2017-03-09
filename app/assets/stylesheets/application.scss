@@ -13,7 +13,7 @@ $blue: #17BEBB;
 $brand: #17BEBB;
 $white: #fff;
 $gray-background: #FAFAFA;
-$max-width: 970px;
+$max-width: 970px + 16px;
 $root-cursor: inherit !default;
 $opacity: 0.75;
 
@@ -67,7 +67,7 @@ p { line-height: 1.5; }
     @extend ._container;
     > .logo {
       height: 32px;
-      left: 0;
+      left: 8px;
       position: absolute;
       top: (64px - 32px) / 2;
     }
@@ -103,7 +103,7 @@ p { line-height: 1.5; }
 .google-adsense {
   @extend ._container;
   margin-bottom: 24px;
-  max-width: $max-width;
+  max-width: 970px;
   text-align: center;
   > .adsbygoogle { display: inline-block; }
 }
